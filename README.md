@@ -9,6 +9,6 @@ Pequeño script en CLIPS para generar una dieta semanal en función de ciertos p
 
 En la consola CLIPS:
 
-    (load "dieta.cpl")
+    (load "dieta.clp")
     (reset)
     (run)

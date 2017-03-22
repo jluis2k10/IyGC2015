@@ -1,22 +1,22 @@
 
 ;;;======================================================
-;;;   INGENIERIA Y GESTIÓN DEL CONOCIMIENTO
+;;;   INGENIERIA Y GESTIÃ“N DEL CONOCIMIENTO
 ;;;   Curso 2015/16
 ;;;   Primera Actividad Evaluable
 ;;;
-;;;   Alumno: José Luis Pérez González
+;;;   Alumno: JosÃ© Luis PÃ©rez GonzÃ¡lez
 ;;;   DNI: 
 ;;;
 ;;;      Sistema Experto que elabora una dieta semanal en
-;;;      función de las características y necesidades del
+;;;      funciÃ³n de las caracterÃ­sticas y necesidades del
 ;;;      usuario que lo opera.
-;;;      Tiene en cuenta las necesidades calóricas del
-;;;      usuario, la aportación necesaria de cada macro-
-;;;      nutriente, y el número de raciones diarias reco-
+;;;      Tiene en cuenta las necesidades calÃ³ricas del
+;;;      usuario, la aportaciÃ³n necesaria de cada macro-
+;;;      nutriente, y el nÃºmero de raciones diarias reco-
 ;;;      mendadas de cada grupo de alimentos.
 ;;;
 ;;;   Para ejecutarlo:
-;;;      (load "dieta.cpl")
+;;;      (load "dieta.clp")
 ;;;      (reset)
 ;;;      (run)
 ;;;;======================================================
@@ -37,7 +37,7 @@
 	(slot racion-minima (type INTEGER) (range 1 ?VARIABLE)) ; en gramos
 	(slot racion-maxima (type INTEGER) (range 1 ?VARIABLE)) ; en gramos
 	(multislot indicado-para (type SYMBOL) (allowed-symbols Desayuno Almuerzo Comida Merienda Cena Postre))
-	(slot acom (type SYMBOL) (allowed-symbols TRUE FALSE) (default FALSE))) ; Alimentos que sirven para acompañar a otros
+	(slot acom (type SYMBOL) (allowed-symbols TRUE FALSE) (default FALSE))) ; Alimentos que sirven para acompaÃ±ar a otros
 
 (deffacts alimentos-grupo-1 "Alimentos del grupo 1: Leche y derivados"
 	(alimento
@@ -51,7 +51,7 @@
 	(alimento
 		(id 5) (grupo 1) (nombre "Queso Philadelphia") (kcal 200) (proteinas 10.0) (hidratos 6.6) (grasas 16.6) (racion-minima 40) (racion-maxima 60) (indicado-para Desayuno Almuerzo Merienda Postre))
 	(alimento
-		(id 6) (grupo 1) (nombre "Requesón") (kcal 96) (proteinas 13.6) (hidratos 1.4) (grasas 4.0) (racion-minima 85) (racion-maxima 85) (indicado-para Postre))
+		(id 6) (grupo 1) (nombre "RequesÃ³n") (kcal 96) (proteinas 13.6) (hidratos 1.4) (grasas 4.0) (racion-minima 85) (racion-maxima 85) (indicado-para Postre))
 	(alimento
 		(id 7) (grupo 1) (nombre "Queso Parmesano") (kcal 374) (proteinas 36.0) (hidratos 0.0) (grasas 25.6) (racion-minima 40) (racion-maxima 60) (indicado-para Merienda Postre))
 	(alimento
@@ -79,13 +79,13 @@
 	(alimento
 		(id 19) (grupo 2) (nombre "Dorada") (kcal 80) (proteinas 19.8) (hidratos 0.0) (grasas 1.2) (racion-minima 125) (racion-maxima 200) (indicado-para Comida Cena))
 	(alimento
-		(id 20) (grupo 2) (nombre "Salmón") (kcal 176) (proteinas 18.4) (hidratos 0.0) (grasas 12.0) (racion-minima 125) (racion-maxima 200) (indicado-para Comida Cena))
+		(id 20) (grupo 2) (nombre "SalmÃ³n") (kcal 176) (proteinas 18.4) (hidratos 0.0) (grasas 12.0) (racion-minima 125) (racion-maxima 200) (indicado-para Comida Cena))
 	(alimento
 		(id 21) (grupo 2) (nombre "Sepia") (kcal 73) (proteinas 14.0) (hidratos 0.7) (grasas 1.5) (racion-minima 125) (racion-maxima 200) (indicado-para Comida Cena)))
 
 (deffacts alimentos-grupo-3 "Alimentos del grupo 3: Patatas, legumbres y frutos secos"
 	(alimento
-		(id 22) (grupo 3) (nombre "Guiso Judías Blancas") (kcal 109) (proteinas 4.0) (hidratos 11.0) (grasas 5.0) (racion-minima 60) (racion-maxima 90) (indicado-para Comida))
+		(id 22) (grupo 3) (nombre "Guiso JudÃ­as Blancas") (kcal 109) (proteinas 4.0) (hidratos 11.0) (grasas 5.0) (racion-minima 60) (racion-maxima 90) (indicado-para Comida))
 	(alimento
 		(id 23) (grupo 3) (nombre "Garbanzos Cocidos") (kcal 90) (proteinas 4.0) (hidratos 10.0) (grasas 3.4) (racion-minima 60) (racion-maxima 90) (indicado-para Comida))
 	(alimento
@@ -103,7 +103,7 @@
 	(alimento
 		(id 31) (grupo 3) (nombre "Patatas Cocidas") (kcal 77) (proteinas 1.7) (hidratos 16.0) (grasas 0.2) (racion-minima 50) (racion-maxima 150) (indicado-para Comida Cena) (acom TRUE))
 	(alimento
-		(id 32) (grupo 3) (nombre "Puré de Patatas") (kcal 350) (proteinas 8.2) (hidratos 75.0) (grasas 0.8) (racion-minima 60) (racion-maxima 90) (indicado-para Comida Cena) (acom TRUE)))
+		(id 32) (grupo 3) (nombre "PurÃ© de Patatas") (kcal 350) (proteinas 8.2) (hidratos 75.0) (grasas 0.8) (racion-minima 60) (racion-maxima 90) (indicado-para Comida Cena) (acom TRUE)))
 
 (deffacts alimentos-grupo-4 "Alimentos del grupo 4: Verduras y hortalizas"
 	(alimento
@@ -115,7 +115,7 @@
 	(alimento
 		(id 36) (grupo 4) (nombre "Berenjena") (kcal 16) (proteinas 1.1) (hidratos 2.6) (grasas 0.1) (racion-minima 150) (racion-maxima 250) (indicado-para Comida Cena) (acom FALSE))
 	(alimento
-		(id 37) (grupo 4) (nombre "Calabacín") (kcal 12) (proteinas 1.3) (hidratos 1.4) (grasas 0.1) (racion-minima 150) (racion-maxima 250) (indicado-para Comida Cena) (acom TRUE))
+		(id 37) (grupo 4) (nombre "CalabacÃ­n") (kcal 12) (proteinas 1.3) (hidratos 1.4) (grasas 0.1) (racion-minima 150) (racion-maxima 250) (indicado-para Comida Cena) (acom TRUE))
 	(alimento
 		(id 38) (grupo 4) (nombre "Coliflor") (kcal 25) (proteinas 3.2) (hidratos 2.7) (grasas 0.2) (racion-minima 150) (racion-maxima 250) (indicado-para Comida Cena) (acom TRUE))
 	(alimento
@@ -135,17 +135,17 @@
 	(alimento
 		(id 44) (grupo 5) (nombre "Manzana") (kcal 45) (proteinas 0.2) (hidratos 10.4) (grasas 0.3) (racion-minima 150) (racion-maxima 150) (indicado-para Desayuno Almuerzo Merienda Postre))
 	(alimento
-		(id 45) (grupo 5) (nombre "Melón") (kcal 30) (proteinas 0.8) (hidratos 7.4) (grasas 0.2) (racion-minima 150) (racion-maxima 150) (indicado-para Desayuno Almuerzo Merienda Postre))
+		(id 45) (grupo 5) (nombre "MelÃ³n") (kcal 30) (proteinas 0.8) (hidratos 7.4) (grasas 0.2) (racion-minima 150) (racion-maxima 150) (indicado-para Desayuno Almuerzo Merienda Postre))
 	(alimento
 		(id 46) (grupo 5) (nombre "Naranja") (kcal 53) (proteinas 1.0) (hidratos 11.7) (grasas 0.2) (racion-minima 150) (racion-maxima 150) (indicado-para Desayuno Almuerzo Merienda Postre))
 	(alimento
 		(id 47) (grupo 5) (nombre "Pera") (kcal 58) (proteinas 0.7) (hidratos 15.0) (grasas 0.1) (racion-minima 150) (racion-maxima 150) (indicado-para Desayuno Almuerzo Merienda Postre))
 	(alimento
-		(id 48) (grupo 5) (nombre "Plátano") (kcal 85) (proteinas 1.2) (hidratos 19.5) (grasas 0.3) (racion-minima 150) (racion-maxima 150) (indicado-para Desayuno Almuerzo Merienda Postre))
+		(id 48) (grupo 5) (nombre "PlÃ¡tano") (kcal 85) (proteinas 1.2) (hidratos 19.5) (grasas 0.3) (racion-minima 150) (racion-maxima 150) (indicado-para Desayuno Almuerzo Merienda Postre))
 	(alimento
 		(id 49) (grupo 5) (nombre "Pomelo") (kcal 26) (proteinas 0.6) (hidratos 6.2) (grasas 0.0) (racion-minima 150) (racion-maxima 150) (indicado-para Desayuno Almuerzo Merienda Postre))
 	(alimento
-		(id 50) (grupo 5) (nombre "Sandía") (kcal 15) (proteinas 0.7) (hidratos 3.7) (grasas 0.0) (racion-minima 150) (racion-maxima 150) (indicado-para Desayuno Almuerzo Merienda Postre))
+		(id 50) (grupo 5) (nombre "SandÃ­a") (kcal 15) (proteinas 0.7) (hidratos 3.7) (grasas 0.0) (racion-minima 150) (racion-maxima 150) (indicado-para Desayuno Almuerzo Merienda Postre))
 	(alimento
 		(id 51) (grupo 5) (nombre "Uvas") (kcal 61) (proteinas 0.5) (hidratos 15.6) (grasas 0.1) (racion-minima 150) (racion-maxima 200) (indicado-para Desayuno Almuerzo Merienda Postre))
 	(alimento
@@ -153,15 +153,15 @@
 	(alimento
 		(id 67) (grupo 5) (nombre "Membrillo") (kcal 57) (proteinas 0.4) (hidratos 15.0) (grasas 0.1) (racion-minima 150) (racion-maxima 150) (indicado-para Desayuno Almuerzo Merienda Postre))
 	(alimento
-		(id 68) (grupo 5) (nombre "Níspero") (kcal 47) (proteinas 0.4) (hidratos 12.0) (grasas 0.2) (racion-minima 150) (racion-maxima 150) (indicado-para Desayuno Almuerzo Merienda Postre)))
+		(id 68) (grupo 5) (nombre "NÃ­spero") (kcal 47) (proteinas 0.4) (hidratos 12.0) (grasas 0.2) (racion-minima 150) (racion-maxima 150) (indicado-para Desayuno Almuerzo Merienda Postre)))
 
-(deffacts alimentos-grupo-6 "Alimentos del grupo 6: Pan, pasta, cereales, azúcar y dulces"
+(deffacts alimentos-grupo-6 "Alimentos del grupo 6: Pan, pasta, cereales, azÃºcar y dulces"
 	(alimento
-		(id 53) (grupo 6) (nombre "Galleta tipo María") (kcal 409) (proteinas 6.8) (hidratos 82.3) (grasas 8.1) (racion-minima 30) (racion-maxima 60) (indicado-para Desayuno))
+		(id 53) (grupo 6) (nombre "Galleta tipo MarÃ­a") (kcal 409) (proteinas 6.8) (hidratos 82.3) (grasas 8.1) (racion-minima 30) (racion-maxima 60) (indicado-para Desayuno))
 	(alimento
 		(id 54) (grupo 6) (nombre "Pan tostado") (kcal 420) (proteinas 11.3) (hidratos 83.0) (grasas 6.0) (racion-minima 30) (racion-maxima 60) (indicado-para Desayuno Almuerzo))
 	(alimento
-		(id 55) (grupo 6) (nombre "Ñoquis") (kcal 246) (proteinas 6.3) (hidratos 40.2) (grasas 6.6) (racion-minima 80) (racion-maxima 100) (indicado-para Comida Cena))
+		(id 55) (grupo 6) (nombre "Ã‘oquis") (kcal 246) (proteinas 6.3) (hidratos 40.2) (grasas 6.6) (racion-minima 80) (racion-maxima 100) (indicado-para Comida Cena))
 	(alimento
 		(id 56) (grupo 6) (nombre "Raviolis") (kcal 253) (proteinas 9.1) (hidratos 44.4) (grasas 4.4) (racion-minima 80) (racion-maxima 100) (indicado-para Comida Cena))
 	(alimento
@@ -185,23 +185,23 @@
 	(alimento
 		(id 66) (grupo 6) (nombre "Pan Integral") (kcal 230) (proteinas 9.0) (hidratos 47.5) (grasas 1.0) (racion-minima 60) (racion-maxima 100) (indicado-para Comida Merienda Cena) (acom TRUE)))
 
-(deftemplate registro-calorico "Lleva la cuenta de las calorías diarias aportadas por cada alimento consumido"
+(deftemplate registro-calorico "Lleva la cuenta de las calorÃ­as diarias aportadas por cada alimento consumido"
 	(slot dia (type SYMBOL) (allowed-symbols lunes martes miercoles jueves viernes))
 	(slot cal (type FLOAT) (range 0.0 ?VARIABLE)))
 
-(deffacts registro "Inicialización de registro calórico"
+(deffacts registro "InicializaciÃ³n de registro calÃ³rico"
 	(registro-calorico (dia lunes) (cal 0.0))
 	(registro-calorico (dia martes) (cal 0.0))
 	(registro-calorico (dia miercoles) (cal 0.0))
 	(registro-calorico (dia jueves) (cal 0.0))
 	(registro-calorico (dia viernes) (cal 0.0)))
 
-(deftemplate registro-macro "Lleva la cuenta semanal de las calorías aportadas por cada macronutriente"
+(deftemplate registro-macro "Lleva la cuenta semanal de las calorÃ­as aportadas por cada macronutriente"
 	(slot hidratos (type FLOAT) (range 0.0 ?VARIABLE))
 	(slot proteinas (type FLOAT) (range 0.0 ?VARIABLE))
 	(slot grasas (type FLOAT) (range 0.0 ?VARIABLE)))
 
-(deffacts registro-macro "Inicialización registro macronutrientes"
+(deffacts registro-macro "InicializaciÃ³n registro macronutrientes"
 	(registro-macro (hidratos 0.0) (proteinas 0.0) (grasas 0.0)))
 
 (deftemplate raciones-por-grupo "Raciones diarias para cada grupo de alimentos"
@@ -215,14 +215,14 @@
 	(raciones-por-grupo (grupo 3) (raciones 5)) ; Patatas, legumbres y frutos secos
 	(raciones-por-grupo (grupo 4) (raciones 4)) ; Verduras y hortalizas
 	(raciones-por-grupo (grupo 5) (raciones 3)) ; Frutas
-	(raciones-por-grupo (grupo 6) (raciones 5))); Pan, pasta, cereales, azúcar y dulces
+	(raciones-por-grupo (grupo 6) (raciones 5))); Pan, pasta, cereales, azÃºcar y dulces
 
-(deftemplate menu "Lista de alimentos añadidos al menu diario"
+(deftemplate menu "Lista de alimentos aÃ±adidos al menu diario"
 	(slot dia (type SYMBOL) (allowed-symbols lunes martes miercoles jueves viernes))
 	(slot comida (type SYMBOL) (allowed-symbols Desayuno Almuerzo Comida Merienda Cena))
 	(multislot alimentos (type INTEGER)))
 
-(deffacts menus "Inicialización menús diarios"
+(deffacts menus "InicializaciÃ³n menÃºs diarios"
 	(menu (dia lunes) (comida Desayuno))
 	(menu (dia lunes) (comida Almuerzo))
 	(menu (dia lunes) (comida Comida))
@@ -249,13 +249,13 @@
 	(menu (dia viernes) (comida Merienda))
 	(menu (dia viernes) (comida Cena)))
 
-(deftemplate alimentos-posibles "Guarda la lista de ids de los alimentos que se pueden añadir en una búsqueda determinada"
+(deftemplate alimentos-posibles "Guarda la lista de ids de los alimentos que se pueden aÃ±adir en una bÃºsqueda determinada"
 	(multislot ids (type INTEGER) (range 0 ?VARIABLE)))
 
-(deffacts posibles "Inicialización de alimentos posibles"
+(deffacts posibles "InicializaciÃ³n de alimentos posibles"
 	(alimentos-posibles (ids)))
 
-(deftemplate necesidades-cal "Necesidades calóricas para cada comida del día"
+(deftemplate necesidades-cal "Necesidades calÃ³ricas para cada comida del dÃ­a"
 	(slot comida (type SYMBOL) (allowed-symbols Desayuno Almuerzo Comida Merienda Cena))
 	(slot cal (type FLOAT)))
 
@@ -265,24 +265,24 @@
 	(slot proteinas (type FLOAT))
 	(slot grasas (type FLOAT)))
 
-(deftemplate gasto-por-actividad "Gasto calórico fijo en función de la actividad física"
+(deftemplate gasto-por-actividad "Gasto calÃ³rico fijo en funciÃ³n de la actividad fÃ­sica"
 	(slot tipo-actividad (type SYMBOL) (allowed-symbols r l m i))
 	(slot gasto-actividad (type INTEGER)))
 
-(deftemplate rango-gasto-energetico "Gasto calórico en función de las características físicas del usuario"
+(deftemplate rango-gasto-energetico "Gasto calÃ³rico en funciÃ³n de las caracterÃ­sticas fÃ­sicas del usuario"
 	(slot genero (type SYMBOL) (allowed-symbols h m))
 	(slot edad-minima (type INTEGER))
 	(slot edad-maxima (type INTEGER))
 	(slot factor (type FLOAT))
 	(slot fijo (type INTEGER)))
 
-(deftemplate tipo-dieta "Gasto calórico en función del tipo de dieta requerida (perder o mantener)"
+(deftemplate tipo-dieta "Gasto calÃ³rico en funciÃ³n del tipo de dieta requerida (perder o mantener)"
 	(slot tipo (type SYMBOL) (allowed-symbols p m))
 	(slot factor (type FLOAT)))
 
-; Añade hechos iniciales para las tres plantillas anteriores
-(deffacts tabla-gasto-energetico "Inicialización necesidades calóricas"
-	; Necesidades calóricas en función del género y la edad
+; AÃ±ade hechos iniciales para las tres plantillas anteriores
+(deffacts tabla-gasto-energetico "InicializaciÃ³n necesidades calÃ³ricas"
+	; Necesidades calÃ³ricas en funciÃ³n del gÃ©nero y la edad
 	(rango-gasto-energetico
 		(genero h) (edad-minima 0) (edad-maxima 3) (factor 60.9) (fijo -54))
 	(rango-gasto-energetico
@@ -307,7 +307,7 @@
 		(genero m) (edad-minima 30) (edad-maxima 60) (factor 8.7) (fijo 829))
 	(rango-gasto-energetico
 		(genero m) (edad-minima 60) (edad-maxima 1000) (factor 10.5) (fijo 596))
-	; Necesidades calóricas en función de la actividad física
+	; Necesidades calÃ³ricas en funciÃ³n de la actividad fÃ­sica
 	(gasto-por-actividad
 		(tipo-actividad r) (gasto-actividad 0))
 	(gasto-por-actividad
@@ -316,15 +316,15 @@
 		(tipo-actividad m) (gasto-actividad 400))	
 	(gasto-por-actividad
 		(tipo-actividad i) (gasto-actividad 1000))
-	; Necesidades calóricas en función del tipo de dieta (perder o manetener)
+	; Necesidades calÃ³ricas en funciÃ³n del tipo de dieta (perder o manetener)
 	(tipo-dieta
 		(tipo p) (factor 0.9))
 	(tipo-dieta
 		(tipo m) (factor 1.0)))
 
-; Estos hechos los necesitan varias reglas para saber qué
-; día/comida son el/la siguiente.
-(deffacts dias-comidas "Días de la semana y comidas del día"
+; Estos hechos los necesitan varias reglas para saber quÃ©
+; dÃ­a/comida son el/la siguiente.
+(deffacts dias-comidas "DÃ­as de la semana y comidas del dÃ­a"
 	(dias lunes martes miercoles jueves viernes)
 	(comidas Desayuno Almuerzo Comida Merienda Cena)
 )
@@ -333,8 +333,8 @@
 ;;;=======================================================
 ;;;   BASE DE CONOCIMIENTO
 ;;;      1. Hechos desconocidos (preguntar al usuario)
-;;;      2. Calcular necesidades calóricas
-;;;      3. Confeccionar el menú
+;;;      2. Calcular necesidades calÃ³ricas
+;;;      3. Confeccionar el menÃº
 ;;;      4. Imprimir resultados
 ;;;=======================================================
 
@@ -345,53 +345,53 @@
 
 (defrule pregunta-nombre "Regla de entrada, comenzamos por preguntar el nombre del usuario"
 	=>
-	(printout t "¿Cómo te llamas? ")
+	(printout t "Â¿CÃ³mo te llamas? ")
 	(bind ?nombre (readline))
 	(assert (nombre-usuario ?nombre)))
 
 (defrule pregunta-edad "Preguntar edad del usuario"
 	(nombre-usuario $?)
 	=>
-	(printout t "¿Cuántos años tienes? ")
+	(printout t "Â¿CuÃ¡ntos aÃ±os tienes? ")
 	(bind ?edad (read))
 	(assert (edad-usuario ?edad)))
 
-(defrule pregunta-genero "Preguntar género del usuario"
+(defrule pregunta-genero "Preguntar gÃ©nero del usuario"
 	(edad-usuario ?)
 	=>
-	(printout t "¿Eres (h)ombre o (m)ujer? ")
+	(printout t "Â¿Eres (h)ombre o (m)ujer? ")
 	(bind ?genero (read))
 	(assert (genero-usuario ?genero)))
 
 (defrule pregunta-peso "Preguntar peso del usuario"
 	(genero-usuario ?)
 	=>
-	(printout t "¿Cuánto pesas? (en kg): ")
+	(printout t "Â¿CuÃ¡nto pesas? (en kg): ")
 	(bind ?peso (read))
 	(assert (peso-usuario ?peso)))
 
-(defrule pregunta-actividad "Preguntar qué tipo de actividad física realiza el usuario"
+(defrule pregunta-actividad "Preguntar quÃ© tipo de actividad fÃ­sica realiza el usuario"
 	(peso-usuario ?)
 	=>
-	(printout t "¿Qué tipo de actividad física llevas en tu vida diaria? (r)eposo, (l)igera, (m)oderada o (i)ntensa: ")
+	(printout t "Â¿QuÃ© tipo de actividad fÃ­sica llevas en tu vida diaria? (r)eposo, (l)igera, (m)oderada o (i)ntensa: ")
 	(bind ?actividad (read))
 	(assert (actividad-usuario ?actividad)))
 
 (defrule pregunta-dieta "Preguntar si el usuario quiere (p)erder o (m)antener peso"
 	(actividad-usuario ?)
 	=>
-	(printout t "¿Quieres (p)erder o (m)antener peso? ")
+	(printout t "Â¿Quieres (p)erder o (m)antener peso? ")
 	(bind ?dieta (read))
 	(assert (dieta-usuario ?dieta)))
 
 
 ;;;*************************************
-;;;* 2. Calcular necesidades calóricas *
+;;;* 2. Calcular necesidades calÃ³ricas *
 ;;;*************************************
 
-; Calorías necesarias = Gasto energético basal + gasto energético por actividad física
-; Gasto energético basal => Hechos en "tabla-gasto-energético"
-(defrule calcula-calorias "Obtener las necesidades calóricas particulares del usuario"
+; CalorÃ­as necesarias = Gasto energÃ©tico basal + gasto energÃ©tico por actividad fÃ­sica
+; Gasto energÃ©tico basal => Hechos en "tabla-gasto-energÃ©tico"
+(defrule calcula-calorias "Obtener las necesidades calÃ³ricas particulares del usuario"
 	(edad-usuario ?edad)
 	(genero-usuario ?genero)
 	(peso-usuario ?peso)
@@ -401,8 +401,8 @@
 		(genero ?genero)
 		(edad-minima ?edad-minima&:(<= ?edad-minima ?edad))
 		(edad-maxima ?edad-maxima&:(> ?edad-maxima ?edad))
-		(factor ?factor) ; factor en función de la edad y el género a multiplicar por el peso
-		(fijo ?fijo))    ; gasto fijo en función de la edad y el género
+		(factor ?factor) ; factor en funciÃ³n de la edad y el gÃ©nero a multiplicar por el peso
+		(fijo ?fijo))    ; gasto fijo en funciÃ³n de la edad y el gÃ©nero
 	(gasto-por-actividad (tipo-actividad ?actividad) (gasto-actividad ?gasto-actividad))
 	(tipo-dieta (tipo ?dieta) (factor ?factor-tipo-dieta)) ; factor multiplicativo (0.9 si perder, 1 si mantener)
 	=>
@@ -411,13 +411,13 @@
 	(assert (fase buscar FALSE Desayuno lunes))) ; FALSE porque no empezamos buscando un plato para comida o cena
 
 ; Asumimos que cada comida debe aportar un porcentaje determinado
-; de las necesidades calóricas diarias.
+; de las necesidades calÃ³ricas diarias.
 ;    Desayuno: 20%
 ;    Almuerzo: 15%
 ;    Comida: 30%
 ;    Merienda: 15%
 ;    Cena: 20%
-(defrule division-cal-por-comida "Necesidades calóricas para cada comida del día"
+(defrule division-cal-por-comida "Necesidades calÃ³ricas para cada comida del dÃ­a"
 	(gasto-energetico ?gasto)
 	=>
 	(assert (necesidades-cal (comida Desayuno) (cal (* ?gasto 0.2))))
@@ -427,12 +427,12 @@
 	(assert (necesidades-cal (comida Cena) (cal (* ?gasto 0.2))))
 )
 
-; Definimos que diariamente, cada macronutriente deberá aportar
-; una cantidad máxima de calorías.
-;    Hidratos de carbono: 50% del total de calorías
-;    Proteinas: 15% del total de calorías
-;    Grasas: 35% del total de calorías
-(defrule calcula-macro-nutrientes "Necesidades calóricas diarias de cada uno de los tres macronutrientes"
+; Definimos que diariamente, cada macronutriente deberÃ¡ aportar
+; una cantidad mÃ¡xima de calorÃ­as.
+;    Hidratos de carbono: 50% del total de calorÃ­as
+;    Proteinas: 15% del total de calorÃ­as
+;    Grasas: 35% del total de calorÃ­as
+(defrule calcula-macro-nutrientes "Necesidades calÃ³ricas diarias de cada uno de los tres macronutrientes"
 	(gasto-energetico ?gasto)
 	(dias $? ?dia $?)
 	=>
@@ -442,23 +442,23 @@
 
 
 ;;;****************************************************************
-;;;* 3. Confeccionar el menú                                      *
+;;;* 3. Confeccionar el menÃº                                      *
 ;;;*    Dos casos diferentes:                                     *
 ;;;*      a) Buscar alimentos para desayuno, almuerzo o merienda  *
 ;;;*      b) Buscar alimentos para comida o cena                  *
 ;;;*                                                              *
 ;;;*    El caso a) consiste simplemente en buscar un alimento     *
-;;;*    cumpla con las restricciones (calóricas, macronutrientes, *
+;;;*    cumpla con las restricciones (calÃ³ricas, macronutrientes, *
 ;;;*    grupo de alimentos) impuestas.                            *
 ;;;*    En el caso b) se buscan 3 alimentos conjuntamente. Uno    *
-;;;*    para el plato principal, otro para la guarnición, y el    *
-;;;*    último para el postre. Igualmente, cada uno de ellos por  *
+;;;*    para el plato principal, otro para la guarniciÃ³n, y el    *
+;;;*    Ãºltimo para el postre. Igualmente, cada uno de ellos por  *
 ;;;*    separado debe cumplir las restricciones.                  *
 ;;;****************************************************************
 
-; Busca todos los alimentos y los añade a la lista de alimentos posibles
+; Busca todos los alimentos y los aÃ±ade a la lista de alimentos posibles
 ; Dispara regla "elegir-alimento"
-(defrule buscar-alimentos "Buscar un alimento que cumpla con las restricciones calóricas diarias"
+(defrule buscar-alimentos "Buscar un alimento que cumpla con las restricciones calÃ³ricas diarias"
 	(fase buscar FALSE ?comida&:(not (or (eq Comida ?comida) (eq Cena ?comida))) ?dia)
 	?posibles <- (alimentos-posibles (ids $?ids))
 	(necesidades-cal (comida ?comida) (cal ?cal-restantes))
@@ -467,7 +467,7 @@
 								  (grasas ?cal-grasas))
 	(menu (dia ?dia) (comida ?comida) (alimentos $?ids-alimentos))
 	(alimento
-		(id ?id&:(not (member$ ?id ?ids))&:(not (member$ ?id ?ids-alimentos))) ; seleccionar alimentos que no estén ya ni en la lista de posibles ni en la de incluidos en el menu
+		(id ?id&:(not (member$ ?id ?ids))&:(not (member$ ?id ?ids-alimentos))) ; seleccionar alimentos que no estÃ©n ya ni en la lista de posibles ni en la de incluidos en el menu
 		(grupo ?grupo)
 		(racion-minima ?racion)
 		(kcal ?kcal&:(<= (* ?racion ?kcal 0.01) ?cal-restantes)) ; cal aportadas menor que cal restantes (g. racion * kcal/100g)
@@ -481,13 +481,13 @@
 	;(printout t "Encontrado alimento de " ?comida " para " ?dia ": " ?id crlf)
 	(modify ?posibles (ids (insert$ ?ids 1 ?id))))
 
-(defrule buscar-alimentos-comida-cena "Disparar las reglas que buscan postre, guarnición y principal para la comida o la cena"
+(defrule buscar-alimentos-comida-cena "Disparar las reglas que buscan postre, guarniciÃ³n y principal para la comida o la cena"
 	?fase <- (fase buscar FALSE ?comida&:(or (eq Comida ?comida) (eq Cena ?comida)) ?dia)
 	=>
 	(retract ?fase)
 	(assert (fase buscar postre ?comida ?dia)))
 
-; Busca todos los alimentos de postre y los añade a la lista de alimentos posibles
+; Busca todos los alimentos de postre y los aÃ±ade a la lista de alimentos posibles
 ; Dispara regla "elegir-alimento"
 (defrule buscar-alimentos-postre "Buscar postre para comida o cena"
 	(fase buscar postre ?comida ?dia)
@@ -498,7 +498,7 @@
 								  (grasas ?cal-grasas))
 	(menu (dia ?dia) (comida ?comida) (alimentos $?ids-alimentos))
 	(alimento
-		(id ?id&:(not (member$ ?id ?ids))&:(not (member$ ?id ?ids-alimentos))) ; seleccionar alimentos que no estén ya ni en la lista de posibles ni en la de incluidos en el menu
+		(id ?id&:(not (member$ ?id ?ids))&:(not (member$ ?id ?ids-alimentos))) ; seleccionar alimentos que no estÃ©n ya ni en la lista de posibles ni en la de incluidos en el menu
 		(grupo ?grupo)
 		(racion-minima ?racion)
 		(kcal ?kcal&:(<= (* ?racion ?kcal 0.01) ?cal-restantes)) ; cal aportadas menor que cal restantes (g. racion * kcal/100g)
@@ -512,9 +512,9 @@
 	;(printout t "Encontrado postre para " ?comida " del " ?dia ": " ?id crlf)
 	(modify ?posibles (ids (insert$ ?ids 1 ?id))))
 
-; Busca todos los alimentos de guarnición y los añade a la lista de alimentos posibles
+; Busca todos los alimentos de guarniciÃ³n y los aÃ±ade a la lista de alimentos posibles
 ; Dispara regla "elegir-alimento"
-(defrule buscar-alimentos-guarnicion "Buscar guarnición para comida o cena"
+(defrule buscar-alimentos-guarnicion "Buscar guarniciÃ³n para comida o cena"
 	(fase buscar guarnicion ?comida ?dia)
 	?posibles <- (alimentos-posibles (ids $?ids))
 	(necesidades-cal (comida ?comida) (cal ?cal-restantes))
@@ -523,7 +523,7 @@
 								  (grasas ?cal-grasas))
 	(menu (dia ?dia) (comida ?comida) (alimentos $?ids-alimentos))
 	(alimento
-		(id ?id&:(not (member$ ?id ?ids))&:(not (member$ ?id ?ids-alimentos))) ; seleccionar alimentos que no estén ya ni en la lista de posibles ni en la de incluidos en el menu
+		(id ?id&:(not (member$ ?id ?ids))&:(not (member$ ?id ?ids-alimentos))) ; seleccionar alimentos que no estÃ©n ya ni en la lista de posibles ni en la de incluidos en el menu
 		(grupo ?grupo)
 		(racion-minima ?racion)
 		(kcal ?kcal&:(<= (* ?racion ?kcal 0.01) ?cal-restantes)) ; cal aportadas menor que cal restantes (g. racion * kcal/100g)
@@ -535,10 +535,10 @@
 	)
 	(raciones-por-grupo (grupo ?grupo) (raciones ?raciones&:(> ?raciones 0)))
 	=>
-	;(printout t "Encontrado guarnición para " ?comida " del " ?dia ": " ?id crlf)
+	;(printout t "Encontrado guarniciÃ³n para " ?comida " del " ?dia ": " ?id crlf)
 	(modify ?posibles (ids (insert$ ?ids 1 ?id))))
 
-; Busca todos los alimentos de plato principal y los añade a la lista de alimentos posibles
+; Busca todos los alimentos de plato principal y los aÃ±ade a la lista de alimentos posibles
 ; Dispara regla "elegir-alimento"
 (defrule buscar-alimentos-principal "Buscar plato principal para comida o cena"
 	(fase buscar principal ?comida ?dia)
@@ -549,7 +549,7 @@
 								  (grasas ?cal-grasas))
 	(menu (dia ?dia) (comida ?comida) (alimentos $?ids-alimentos))
 	(alimento
-		(id ?id&:(not (member$ ?id ?ids))&:(not (member$ ?id ?ids-alimentos))) ; seleccionar alimentos que no estén ya ni en la lista de posibles ni en la de incluidos en el menu
+		(id ?id&:(not (member$ ?id ?ids))&:(not (member$ ?id ?ids-alimentos))) ; seleccionar alimentos que no estÃ©n ya ni en la lista de posibles ni en la de incluidos en el menu
 		(grupo ?grupo)
 		(racion-minima ?racion)
 		(kcal ?kcal&:(<= (* ?racion ?kcal 0.01) ?cal-restantes)) ; cal aportadas menor que cal restantes (g. racion * kcal/100g)
@@ -564,25 +564,25 @@
 	;(printout t "Encontrado principal para " ?comida " del " ?dia ": " ?id crlf)
 	(modify ?posibles (ids (insert$ ?ids 1 ?id))))
 
-; Si ningún alimento de los disponibles cumple con las restricciones calóricas
-; existentes, finaliza la búsqueda y se pasa a buscar un alimento para la si-
-; guiente comida del día o para el siguiente plato de la comida/cena.
+; Si ningÃºn alimento de los disponibles cumple con las restricciones calÃ³ricas
+; existentes, finaliza la bÃºsqueda y se pasa a buscar un alimento para la si-
+; guiente comida del dÃ­a o para el siguiente plato de la comida/cena.
 ; Dispara reglas "siguiente-plato-* o siguiente-comida"
-(defrule comida-completada "No se han encontrado alimentos que se puedan añadir"
+(defrule comida-completada "No se han encontrado alimentos que se puedan aÃ±adir"
 	(declare (salience -10))
 	?fase <- (fase buscar ?plato ?comida ?dia)
 	(alimentos-posibles (ids $?ids-posibles))
 	(test (eq (length$ ?ids-posibles) 0))
 	=>
-	;(printout t "No se pueden añadir más alimentos a " ?comida " del " ?dia crlf)
+	;(printout t "No se pueden aÃ±adir mÃ¡s alimentos a " ?comida " del " ?dia crlf)
 	(retract ?fase)
 	(assert (completo ?comida ?plato))
 	(assert (fase siguiente comida ?comida ?plato ?dia)))
 
 ; Elegir aleatoriamente uno de los alimentos de entre la lista de alimentos posibles.
-; Una vez elegido, hay que calcular el tamaño de la ración necesaria.
+; Una vez elegido, hay que calcular el tamaÃ±o de la raciÃ³n necesaria.
 ; Se diferencia del anterior en que 
-; Dispara regla "informacion-alimento" antes de añadirlo al menú.
+; Dispara regla "informacion-alimento" antes de aÃ±adirlo al menÃº.
 (defrule elegir-alimento
 	(declare (salience -10))
 	?fase <- (fase buscar ?plato ?comida ?dia)
@@ -601,11 +601,11 @@
 	(retract ?posibles)
 	(assert (alimentos-posibles (ids))))
 
-; Antes de añadir el alimento seleccionado al menú, debemos recuperar su información
-; nutricional para calcular la ración. Se hace aquí para no sobrecargar las reglas
-; anteriores y que de ese modo sean más fáciles de leer.
+; Antes de aÃ±adir el alimento seleccionado al menÃº, debemos recuperar su informaciÃ³n
+; nutricional para calcular la raciÃ³n. Se hace aquÃ­ para no sobrecargar las reglas
+; anteriores y que de ese modo sean mÃ¡s fÃ¡ciles de leer.
 ; Dispara regla "anyadir-racion" o "recalcular-racion"
-(defrule informacion-alimento "Recuperar información nutricional sobre el alimento seleccionado"
+(defrule informacion-alimento "Recuperar informaciÃ³n nutricional sobre el alimento seleccionado"
 	?f <- (fase info-alimento ?id-alimento ?comida ?dia ?plato)
 	(alimento
 		(id ?id-alimento)
@@ -615,16 +615,16 @@
 		(hidratos ?hidratos)
 		(grasas ?grasas))
 	=>
-	;(printout t "Recuperando información del alimento " ?id-alimento crlf)
+	;(printout t "Recuperando informaciÃ³n del alimento " ?id-alimento crlf)
 	(retract ?f)
-	; Probamos en primer lugar a añadir la ración máxima
+	; Probamos en primer lugar a aÃ±adir la raciÃ³n mÃ¡xima
 	(assert (fase anyadir-racion ?id-alimento ?racion ?comida ?dia ?plato ?kcal ?proteinas ?hidratos ?grasas)))
 
-; Se añade el alimento y su ración indicada al menú. Hay que comprobar que
-; dicha ración cumple con las restricciones calóricas existentes, si no lo
-; hace, entrará en juego la regla "recalcular-racion" en lugar de esta.
+; Se aÃ±ade el alimento y su raciÃ³n indicada al menÃº. Hay que comprobar que
+; dicha raciÃ³n cumple con las restricciones calÃ³ricas existentes, si no lo
+; hace, entrarÃ¡ en juego la regla "recalcular-racion" en lugar de esta.
 ; Dispara regla "actualizar-cal"
-(defrule anyadir-racion "Añadir la ración indicada del alimento al menú"
+(defrule anyadir-racion "AÃ±adir la raciÃ³n indicada del alimento al menÃº"
 	(necesidades-cal (comida ?comida) (cal ?cal-restantes))
 	(necesidades-macro (dia ?dia) (hidratos ?cal-hidratos)
 							      (proteinas ?cal-proteinas)
@@ -636,7 +636,7 @@
 								?grasas&:(<= (* ?racion ?grasas 9 0.01) ?cal-grasas))
 	?menu <- (menu (dia ?dia) (comida ?comida) (alimentos $?ids-alimentos))
 	=>
-	;(printout t "Añadiendo alimento " ?id-alimento " para " ?comida " del " ?dia crlf)
+	;(printout t "AÃ±adiendo alimento " ?id-alimento " para " ?comida " del " ?dia crlf)
 	(retract ?f)
 	(modify ?menu (alimentos (insert$ ?ids-alimentos 1 ?id-alimento)))
 	(assert (alimento-para ?dia ?comida ?id-alimento ?racion (* ?racion ?kcal 0.01)))
@@ -644,11 +644,11 @@
 )
 
 ; Sabemos, porque ya se ha comprobado en las reglas "buscar-alimentos", que
-; el alimento en su ración mínima cumple con los requisitos calóricos necesarios.
-; Si su ración máxima excede estos requisitos, hay que disminuirla progresiva-
+; el alimento en su raciÃ³n mÃ­nima cumple con los requisitos calÃ³ricos necesarios.
+; Si su raciÃ³n mÃ¡xima excede estos requisitos, hay que disminuirla progresiva-
 ; mente hasta que los cumpla.
-; Re-dispara la regla "anyadir-racion" y a sí misma.
-(defrule recalcular-racion "Restar peso de la ración del alimento indicado"
+; Re-dispara la regla "anyadir-racion" y a sÃ­ misma.
+(defrule recalcular-racion "Restar peso de la raciÃ³n del alimento indicado"
 	(necesidades-cal (comida ?comida) (cal ?cal-restantes))
 	(necesidades-macro (dia ?dia) (hidratos ?cal-hidratos)
 							      (proteinas ?cal-proteinas)
@@ -660,15 +660,15 @@
 			   (> (* ?racion ?grasas 9 0.01) ?cal-grasas)
 	))
 	=>
-	;(printout t "Recalculando ración para el alimento " ?id-alimento crlf)
+	;(printout t "Recalculando raciÃ³n para el alimento " ?id-alimento crlf)
 	(retract ?f)
 	(assert (fase anyadir-racion ?id-alimento (- ?racion 1) ?comida ?dia ?plato ?kcal ?proteinas ?hidratos ?grasas))
 )
 
-; Actualiza los hechos con la información de las calorías aportadas
-; tras añadir el alimento.
+; Actualiza los hechos con la informaciÃ³n de las calorÃ­as aportadas
+; tras aÃ±adir el alimento.
 ; Dispara la regla "actualizar-grupos"
-(defrule actualizar-cal "Actualizar los hechos que contienen las calorías aportadas hasta el momento"
+(defrule actualizar-cal "Actualizar los hechos que contienen las calorÃ­as aportadas hasta el momento"
 	?f <- (fase actualizar-cal ?dia ?comida ?plato ?id-alimento ?racion)
 	(alimento (id ?id-alimento) (kcal ?cal) (proteinas ?proteinas) (hidratos ?hidratos) (grasas ?grasas))
 	?cal-comida <- (necesidades-cal (comida ?comida) (cal ?cal-restantes))
@@ -678,7 +678,7 @@
 	?registro-calorico <- (registro-calorico (dia ?dia) (cal ?reg-cal))
 	?registro-macro <- (registro-macro (hidratos ?reg-hidratos) (proteinas ?reg-proteinas) (grasas ?reg-grasas))
 	=>
-	;(printout t "Actualizando calorías restantes tras añadir el alimento " ?id-alimento " a " ?comida " del " ?dia crlf crlf)
+	;(printout t "Actualizando calorÃ­as restantes tras aÃ±adir el alimento " ?id-alimento " a " ?comida " del " ?dia crlf crlf)
 	(retract ?f)
 	(bind ?cal-aportadas (* ?racion ?cal 0.01))
 	(bind ?cal-hidratos-aportadas (* ?racion ?hidratos 0.01 4))
@@ -695,8 +695,8 @@
 	(assert (fase actualizar-grupos ?id-alimento ?comida ?plato ?dia))
 )
 
-; Actualiza los hechos que contienen la información sobre cuántos
-; alimentos de cada grupo se han incluido en el menú.
+; Actualiza los hechos que contienen la informaciÃ³n sobre cuÃ¡ntos
+; alimentos de cada grupo se han incluido en el menÃº.
 ; El grupo del alimento no es ni el 3 ni el 6.
 ; Dispara reglas "siguiente-comida-*" y "siguiente-plato-*"
 (defrule actualizar-grupos "Actualizar cantidad de alimentos de cada grupo"
@@ -709,11 +709,11 @@
 	(assert (fase siguiente comida ?comida ?plato ?dia))
 )
 
-; Actualiza los hechos que contienen la información sobre cuántos
-; alimentos de cada grupo se han incluido en el menú.
+; Actualiza los hechos que contienen la informaciÃ³n sobre cuÃ¡ntos
+; alimentos de cada grupo se han incluido en el menÃº.
 ; Como los alimentos de los grupos 3 y 6 se cuentan combinados,
-; se actualizan aquí simultáneamente ambos hechos cada vez que se
-; añade al menú un alimento del grupo 3 o del grupo 6.
+; se actualizan aquÃ­ simultÃ¡neamente ambos hechos cada vez que se
+; aÃ±ade al menÃº un alimento del grupo 3 o del grupo 6.
 ; Dispara reglas "siguiente-comida-*" y "siguiente-plato-*"
 (defrule actualizar-grupos-2 "Actualizar cantidad de alimentos de los grupos 3 y 6"
 	?f <- (fase actualizar-grupos ?id-alimento ?comida ?plato ?dia)
@@ -727,10 +727,10 @@
 	(assert (fase siguiente comida ?comida ?plato ?dia))
 )
 
-; Busca cuál es la siguiente comida del día utilizando la lista
+; Busca cuÃ¡l es la siguiente comida del dÃ­a utilizando la lista
 ; contenida en el hecho (comidas $?).
 ; Dispara la regla "buscar-alimentos"
-(defrule siguiente-comida "Pasar a buscar alimentos para la siguiente comida del día"
+(defrule siguiente-comida "Pasar a buscar alimentos para la siguiente comida del dÃ­a"
 	(comidas $?comidas)
 	; Si la comida actual es la cena, lo tratamos en la regla "siguiente-comida-cena"
 	?fase <- (fase siguiente comida ?comida&:(< (member$ ?comida ?comidas) 5) FALSE ?dia)
@@ -748,18 +748,18 @@
 	(assert (fase buscar FALSE Desayuno ?dia)))
 
 ; Tras buscar el alimento para el postre de la comida o la cena,
-; hay que pasar a buscar el plato para la guarnición.
+; hay que pasar a buscar el plato para la guarniciÃ³n.
 ; Dispara la regla "buscar-alimentos-guarnicion"
-(defrule siguiente-plato-a-postre "Cambio de buscar postre a buscar guarnición"
+(defrule siguiente-plato-a-postre "Cambio de buscar postre a buscar guarniciÃ³n"
 	?fase <- (fase siguiente comida ?comida postre ?dia)
 	=>
 	(retract ?fase)
 	(assert (fase buscar guarnicion ?comida ?dia)))
 
-; Tras buscar el alimento para la guarnnición de la comida o la cena,
+; Tras buscar el alimento para la guarnniciÃ³n de la comida o la cena,
 ; hay que pasar a buscar el alimento para el plato principal
 ; Dispara la regla "buscar-alimentos-principal"
-(defrule siguiente-plato-a-guarnicion "Cambio de buscar guarnición a buscar plato principal"
+(defrule siguiente-plato-a-guarnicion "Cambio de buscar guarniciÃ³n a buscar plato principal"
 	?fase <- (fase siguiente comida ?comida guarnicion ?dia)
 	=>
 	(retract ?fase)
@@ -767,7 +767,7 @@
 
 ; Tras buscar el alimento para el plato principal de la comida o la
 ; cena, hay que pasar a buscar un alimento para la siguiente comida
-; del día, que será o la merienda o el desayuno.
+; del dÃ­a, que serÃ¡ o la merienda o el desayuno.
 ; Dispara la regla "siguiente-comida" o "siguiente-comida-cena"
 (defrule siguiente-plato-a-principal "Cambio de buscar plato principal a buscar alimento siguiente comida"
 	?fase <- (fase siguiente comida ?comida principal ?dia)
@@ -775,13 +775,13 @@
 	(retract ?fase)
 	(assert (fase siguiente comida ?comida FALSE ?dia)))
 
-; No se pueden añadir más alimentos al menú del día actual, por
-; lo que se debe pasar a buscar alimentos para el menú del siguiente
-; día de la semana.
+; No se pueden aÃ±adir mÃ¡s alimentos al menÃº del dÃ­a actual, por
+; lo que se debe pasar a buscar alimentos para el menÃº del siguiente
+; dÃ­a de la semana.
 ; Se resetean las raciones aportadas para cada grupo de alimentos
-; y las calorías aportadas para empezar de cero en el siguiente día.
+; y las calorÃ­as aportadas para empezar de cero en el siguiente dÃ­a.
 ; Dispara la regla "buscar-alimentos"
-(defrule siguiente-dia "Comenzar elaboración del menú para el siguiente día de la semana"
+(defrule siguiente-dia "Comenzar elaboraciÃ³n del menÃº para el siguiente dÃ­a de la semana"
 	(dias $?dias)
 	(gasto-energetico ?gasto)
 	?fase <- (fase buscar ? ?comida ?dia&:(not (eq ?dia viernes)))
@@ -823,11 +823,11 @@
 	(assert (fase buscar FALSE Desayuno ?siguiente-dia))
 )
 
-; Al no poder añadir más alimentos para el menú del viernes,
-; la elaboración de la dieta ha finalizado. Sólo queda imprimir
+; Al no poder aÃ±adir mÃ¡s alimentos para el menÃº del viernes,
+; la elaboraciÃ³n de la dieta ha finalizado. SÃ³lo queda imprimir
 ; los resultados.
 ; Dispara la regla "imprimir-dia"
-(defrule siguiente-dia-viernes "Menú completo, pasamos a imprimir"
+(defrule siguiente-dia-viernes "MenÃº completo, pasamos a imprimir"
 	(dias $?dias)
 	?fase <- (fase buscar ? ?comida viernes)
 	?f1 <- (completo Desayuno FALSE)
@@ -843,7 +843,7 @@
 	(gasto-energetico ?gasto)
 	=>
 	(retract ?fase ?f1 ?f2 ?f3 ?f4 ?f5 ?f6 ?f7 ?f8 ?f9)
-	(printout t crlf ?nombre ", hemos calculado que necesitas " ?gasto " kcal diarias." crlf "Este es el menú semanal que te hemos preparado:" crlf crlf)
+	(printout t crlf ?nombre ", hemos calculado que necesitas " ?gasto " kcal diarias." crlf "Este es el menÃº semanal que te hemos preparado:" crlf crlf)
 	(printout t "@-------------------------------------------------------@" crlf)
 	(assert (fase imprimir lunes)))
 
@@ -853,7 +853,7 @@
 ;;;**************************
 
 ; Dispara la regla "imprimir-nombre-comida"
-(defrule imprimir-dia "Muestra el día de la semana"
+(defrule imprimir-dia "Muestra el dÃ­a de la semana"
 	?fase <- (fase imprimir ?dia)
 	=>
 	(printout t "|                                                       |" crlf)
@@ -863,7 +863,7 @@
 	(assert (fase imprimir nombre ?dia Desayuno)))
 
 ; Dispara la regla "imprimir-alimentos-menu" o "imprimir-siguiente-comida"
-(defrule imprimir-nombre-comida "Muestra la comida del día (Desayuno, Almuerzo, Comida...)"
+(defrule imprimir-nombre-comida "Muestra la comida del dÃ­a (Desayuno, Almuerzo, Comida...)"
 	?fase <- (fase imprimir nombre ?dia ?comida)
 	=>
 	(format t "| %-54s|%n" (str-cat ?comida ":"))
@@ -871,7 +871,7 @@
 	(assert (fase imprimir menu ?dia ?comida)))
 
 
-(defrule imprimir-alimentos-menu "Imprimie los alimentos para la comida de un día"
+(defrule imprimir-alimentos-menu "Imprimie los alimentos para la comida de un dÃ­a"
 	(fase imprimir menu ?dia ?comida)
 	(alimento-para ?dia ?comida ?id ?racion ?cal)
 	(alimento (id ?id) (nombre ?nombre))
@@ -879,10 +879,10 @@
 	(format t "|           %-20s %5d gr. %5d kcal   |%n" ?nombre ?racion ?cal))
 
 ; Si no estamos imprimiendo los alimentos para la cena (en este caso tenemos
-; que cambiar también de día), esta regla hace que se pase a imprimir los
-; alimentos de la siguiente comida del día.
+; que cambiar tambiÃ©n de dÃ­a), esta regla hace que se pase a imprimir los
+; alimentos de la siguiente comida del dÃ­a.
 ; Dispara la regla "imprimir-nombre-comida"
-(defrule imprimir-siguiente-comida "Pasar a la siguiente comida del día (Desayuno a Merienda, Merienda a Comida, etc.)"
+(defrule imprimir-siguiente-comida "Pasar a la siguiente comida del dÃ­a (Desayuno a Merienda, Merienda a Comida, etc.)"
 	(declare (salience -10))
 	(comidas $?comidas)
 	?fase <- (fase imprimir menu ?dia ?comida&:(< (member$ ?comida ?comidas) 5))
@@ -892,11 +892,11 @@
 	(bind ?siguiente-comida (nth$ (+ 1 ?pos) ?comidas))
 	(assert (fase imprimir nombre ?dia ?siguiente-comida)))
 
-; Tras imprimir la cena (última comida del día), mostramos un resumen
-; con las calorías aportadas por el menú y pasamos a buscar los
-; alimentos para el siguiente día de la semana.
+; Tras imprimir la cena (Ãºltima comida del dÃ­a), mostramos un resumen
+; con las calorÃ­as aportadas por el menÃº y pasamos a buscar los
+; alimentos para el siguiente dÃ­a de la semana.
 ; Dispara la regla "imprimir-dia"
-(defrule imprimir-info-diaria "Imprimir resumen calórico diario y pasar al siguiente día"
+(defrule imprimir-info-diaria "Imprimir resumen calÃ³rico diario y pasar al siguiente dÃ­a"
 	(declare (salience -10))
 	(dias $?dias)
 	?fase <- (fase imprimir menu ?dia ?comida&:(eq ?comida Cena))
@@ -917,19 +917,19 @@
 	(format t "| TOTAL     %% proteinas:       %5.1f                    |%n" ?porcentaje-proteinas)
 	(format t "|           %% hidratos:        %5.1f                    |%n" ?porcentaje-hidratos)
 	(format t "|           %% grasas:          %5.1f                    |%n" ?porcentaje-grasas)
-	(format t "|           Calorías:          %5d                    |%n" ?cal-aportadas)
-	(format t "|           Déficit calórico:  %5d                    |%n" (- ?gasto-diario ?cal-aportadas))
+	(format t "|           CalorÃ­as:          %5d                    |%n" ?cal-aportadas)
+	(format t "|           DÃ©ficit calÃ³rico:  %5d                    |%n" (- ?gasto-diario ?cal-aportadas))
 	(printout t "|-------------------------------------------------------|" crlf)
 	(bind ?pos (member$ ?dia ?dias))
-	(bind ?siguiente-dia (nth$ (+ 1 ?pos) ?dias)) ; Nótese que esta operación, si ?pos es 5 (viernes), asignará nil (vacío) a
-												  ; ?siguiente-dia, con lo que se disparará la regla "imprimir-info-semanal"
+	(bind ?siguiente-dia (nth$ (+ 1 ?pos) ?dias)) ; NÃ³tese que esta operaciÃ³n, si ?pos es 5 (viernes), asignarÃ¡ nil (vacÃ­o) a
+												  ; ?siguiente-dia, con lo que se dispararÃ¡ la regla "imprimir-info-semanal"
 	(assert (fase imprimir ?siguiente-dia)))
 
-; Última regla del Sistema Experto. Recuperamos la información calórica diaria y semanal
+; Ãšltima regla del Sistema Experto. Recuperamos la informaciÃ³n calÃ³rica diaria y semanal
 ; e imprimimos el informe final.
-(defrule imprimir-info-semanal "Imprimir resumen calórico semanal y finalizar ejecución"
+(defrule imprimir-info-semanal "Imprimir resumen calÃ³rico semanal y finalizar ejecuciÃ³n"
 	(declare (salience 10))
-	?fase <- (fase imprimir nil) ; un poco chapuza pero ya que es la última regla que se dispara... Y así se evita añadir una regla específica para la info del viernes
+	?fase <- (fase imprimir nil) ; un poco chapuza pero ya que es la Ãºltima regla que se dispara... Y asÃ­ se evita aÃ±adir una regla especÃ­fica para la info del viernes
 	(registro-calorico (dia lunes) (cal ?cal-lunes))
 	(registro-calorico (dia martes) (cal ?cal-martes))
 	(registro-calorico (dia miercoles) (cal ?cal-miercoles))
@@ -949,8 +949,8 @@
 	(format t "| TOTAL     %% proteinas:       %5.1f                    |%n" ?porcentaje-proteinas)
 	(format t "| SEMANA    %% hidratos:        %5.1f                    |%n" ?porcentaje-hidratos)
 	(format t "|           %% grasas:          %5.1f                    |%n" ?porcentaje-grasas)
-	(format t "|           Calorías:          %5d                    |%n" ?cal-aportadas)
-	(format t "|           Déficit calórico:  %5d                    |%n" (- (* 5 ?gasto-diario) ?cal-aportadas))
+	(format t "|           CalorÃ­as:          %5d                    |%n" ?cal-aportadas)
+	(format t "|           DÃ©ficit calÃ³rico:  %5d                    |%n" (- (* 5 ?gasto-diario) ?cal-aportadas))
 	(printout t "|                                                       |" crlf)
 	(printout t "@-------------------------------------------------------@" crlf)
 	(printout t crlf "(-:" crlf))
